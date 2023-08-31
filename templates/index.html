@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Customer_Churn_Prediction</title>
+	<style>
+		body {
+			text-align: center;
+		}
+	</style>
+	
+</head>
+<body>
+	<h1>Customer Churn Prediction</h1>
+	<form action="/predict" method="post">
+		<div>
+			<!-- <label for="Age" F>Age:</label>
+			<br> -->
+		<textarea name="Age" id="Age" cols="30" rows="2" placeholder="Age" required>{{ age }}</textarea>
+	</div>
+	<br>
+	<div>
+		<select id="Gender" name="Gender" required>
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+		</select>
+	<!-- </div>
+	<br>
+	<div> -->
+
+		<select id="Location" name="Location" required>
+			<option value="Los Angeles">Los Angeles</option>
+			<option value="New York">New York</option>
+			<option value="Miami">Miami</option>
+			<option value="Chicago">Chicago</option>
+			<option value="Houston">Houston</option>
+		</select>
+	</div>
+	<br>
+	<div>
+		<!-- <label for="Subscription_Length_Months">Subscription_Length_Months:</label>
+		<br> -->
+		<textarea name="Subscription_Length_Months" id="Subscription_Length_Months" cols="30" rows="2" placeholder="Subscription Length Months" required>{{ subscription_Length_Months }}</textarea>
+	</div>
+	<br>
+	<div>
+		<!-- <label for="Monthly_Bill">Monthly_Bill</label>
+		<br> -->
+		<textarea name="Monthly_Bill" id="Monthly_Bill" cols="30" rows="2" placeholder="Monthly Bill" required>{{ monthly_Bill }}</textarea>
+	</div>
+	<br>
+	<div>
+		<!-- <label for="Total_Usage_GB">Total_Usage_GB</label>
+		<br> -->
+		<textarea name="Total_Usage_GB" id="Total_Usage_GB" cols="30" rows="2" placeholder="Total Usage GB" required>{{ total_Usage_GB }}</textarea>
+	</div>
+	<br>
+	<div>
+		<button>Check</button>
+		<a href="/">Reset</a>
+	</div>
+	</form>
+	<div>
+		{% if Result == 1 %}
+			<h2> The Customer will "Not Churn" </h2>
+		{% elif Result ==0 %}
+			<h2> The Customer will "Churn" </h2>
+		{% endif %}
+	</div>
+</body>
+</html>
