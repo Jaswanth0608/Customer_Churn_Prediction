@@ -1,5 +1,17 @@
 # Customer Churn Prediction
 
+**Customer churn** refers to customers stopping business with a company. Predicting churn helps businesses:
+
+1. **Retain Customers**: Identify dissatisfied customers early.
+2. **Targeted Efforts**: Focus retention strategies where they matter most.
+3. **Cost Efficiency**: Save resources by retaining existing customers.
+4. **Maximize Revenue**: Stable revenue by keeping customers longer.
+5. **Competitive Edge**: Stay ahead by retaining customers effectively.
+6. **Improve Products**: Use insights to enhance offerings.
+7. **Enhanced Experience**: Personalized efforts enhance customer satisfaction.
+
+Churn prediction ensures customer satisfaction, resource efficiency, and business stability.
+
 This project predicts customer churn using historical data. The model analyzes customer behavior and predicts whether a person will churn or not.
 
 **Web Application Link:** [Customer Churn Prediction](https://customer-churn-prediction-rxpb.onrender.com)
