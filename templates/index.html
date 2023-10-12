@@ -3,69 +3,125 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Customer_Churn_Prediction</title>
+	<title>Customer Churn Prediction</title>
 	<style>
 		body {
 			text-align: center;
+			font-family: Arial, sans-serif;
+			background-color: #f5f5f5;
+		}
+
+		h1 {
+			color: #333;
+		}
+
+		form {
+			margin: 20px auto;
+			padding: 20px;
+			width: 80%;
+			max-width: 400px;
+			background-color: #fff;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		form div {
+			margin-bottom: 15px;
+		}
+
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		textarea, select {
+			width: calc(100% - 20px);
+			padding: 8px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 16px;
+			margin-bottom: 10px;
+			margin-right: 10px;
+		}
+
+		button {
+			background-color: #4caf50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		button:hover {
+			background-color: #45a049;
+		}
+
+		a {
+			color: #4caf50;
+			text-decoration: none;
+			margin-left: 10px;
+		}
+
+		.result {
+			margin-top: 20px;
+			font-size: 18px;
+		}
+
+		.result h2 {
+			margin: 10px 0;
+			color: #333;
 		}
 	</style>
-	
 </head>
 <body>
 	<h1>Customer Churn Prediction</h1>
 	<form action="/predict" method="post">
 		<div>
-			<!-- <label for="Age" F>Age:</label>
-			<br> -->
-		<textarea name="Age" id="Age" cols="30" rows="2" placeholder="Age" required>{{ age }}</textarea>
-	</div>
-	<br>
-	<div>
-		<select id="Gender" name="Gender" required>
-			<option value="Male">Male</option>
-			<option value="Female">Female</option>
-		</select>
-	<!-- </div>
-	<br>
-	<div> -->
-
-		<select id="Location" name="Location" required>
-			<option value="Los Angeles">Los Angeles</option>
-			<option value="New York">New York</option>
-			<option value="Miami">Miami</option>
-			<option value="Chicago">Chicago</option>
-			<option value="Houston">Houston</option>
-		</select>
-	</div>
-	<br>
-	<div>
-		<!-- <label for="Subscription_Length_Months">Subscription_Length_Months:</label>
-		<br> -->
-		<textarea name="Subscription_Length_Months" id="Subscription_Length_Months" cols="30" rows="2" placeholder="Subscription Length Months" required>{{ subscription_Length_Months }}</textarea>
-	</div>
-	<br>
-	<div>
-		<!-- <label for="Monthly_Bill">Monthly_Bill</label>
-		<br> -->
-		<textarea name="Monthly_Bill" id="Monthly_Bill" cols="30" rows="2" placeholder="Monthly Bill" required>{{ monthly_Bill }}</textarea>
-	</div>
-	<br>
-	<div>
-		<!-- <label for="Total_Usage_GB">Total_Usage_GB</label>
-		<br> -->
-		<textarea name="Total_Usage_GB" id="Total_Usage_GB" cols="30" rows="2" placeholder="Total Usage GB" required>{{ total_Usage_GB }}</textarea>
-	</div>
-	<br>
-	<div>
-		<button>Check</button>
-		<a href="/">Reset</a>
-	</div>
+			<label for="Age">Age:</label>
+			<textarea name="Age" id="Age" rows="2" placeholder="Age" required>{{ age }}</textarea>
+		</div>
+		<div>
+			<label for="Gender">Gender:</label>
+			<select id="Gender" name="Gender" required>
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+			</select>
+		</div>
+		<div>
+			<label for="Location">Location:</label>
+			<select id="Location" name="Location" required>
+				<option value="Los Angeles">Los Angeles</option>
+				<option value="New York">New York</option>
+				<option value="Miami">Miami</option>
+				<option value="Chicago">Chicago</option>
+				<option value="Houston">Houston</option>
+			</select>
+		</div>
+		<div>
+			<label for="Subscription_Length_Months">Subscription Length Months:</label>
+			<textarea name="Subscription_Length_Months" id="Subscription_Length_Months" rows="2" placeholder="Subscription Length Months" required>{{ subscription_Length_Months }}</textarea>
+		</div>
+		<div>
+			<label for="Monthly_Bill">Monthly Bill:</label>
+			<textarea name="Monthly_Bill" id="Monthly_Bill" rows="2" placeholder="Monthly Bill" required>{{ monthly_Bill }}</textarea>
+		</div>
+		<div>
+			<label for="Total_Usage_GB">Total Usage GB:</label>
+			<textarea name="Total_Usage_GB" id="Total_Usage_GB" rows="2" placeholder="Total Usage GB" required>{{ total_Usage_GB }}</textarea>
+		</div>
+		<div>
+			<button>Check</button>
+			<a href="/">Reset</a>
+		</div>
 	</form>
-	<div>
+	<div class="result">
 		{% if Result == 1 %}
-			<h2> The Customer will "Not Churn" </h2>
-		{% elif Result ==0 %}
-			<h2> The Customer will "Churn" </h2>
+			<h2>The Customer will "Not Churn"</h2>
+		{% elif Result == 0 %}
+			<h2>The Customer will "Churn"</h2>
 		{% endif %}
 	</div>
 </body>
