@@ -33,4 +33,4 @@ To run the application, follow these steps:
    - `app.py`: This file contains the Flask code responsible for deploying the model.
    - `requirements.txt` and `runtime.txt`: These files specify the versions of the packages used in the project.
 
-Ensure that you have the necessary packages installed as per the `requirements.txt` file before running the application. To deploy the model, run `app.py` and access the web application through the provided URL.
+Ensure that you have the necessary packages installed as per the `requirements.txt` file before running the application. To deploy the model, run `app.py` (use `Flask run` in terminal or click run button) and access the web application through the provided URL.
